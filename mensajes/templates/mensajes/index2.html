@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form  method="post">
+    {% csrf_token %}
+    {{ formDni}}
+    <input type="submit" value="Submit" style="display: none"/>
+</form>
+<form  method="post">
+    {% csrf_token %}
+    {{ formName.dni_.as_hidden }}
+    <p>{{ formName.names.label_tag }} {{ formName.names }}</p>
+    <p>{{ formName.last_names.label_tag }} {{ formName.last_names }}</p>
+    <input type="submit" value="Submit" />
+</form>
+{% endblock %}
